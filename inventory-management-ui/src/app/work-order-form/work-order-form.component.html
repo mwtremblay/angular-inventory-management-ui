@@ -1,10 +1,10 @@
 <div class="card my-5">
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #woForm="ngForm">
-        
+
         <div class="form-group">
           <label for="woname">Name</label>
-          <input type="text" [(ngModel)]="workorder.woname" 
+          <input type="text" [(ngModel)]="workorder.woname"
             class="form-control"
             id="woname"
             name="woname"
@@ -12,23 +12,59 @@
             required #woname="ngModel"
             >
         </div>
-        
+
         <div [hidden]="!woname.pristine" class="alert alert-danger">Name is required</div>
-        
+
         <div class="form-group">
           <label for="wodescription">Description</label>
-          <input type="text" [(ngModel)]="workorder.wodescription" 
+          <input type="text" [(ngModel)]="workorder.wodescription"
             class="form-control"
             id="wodescription"
             name="wodescription"
             placeholder="Enter the Work Order Description"
             required #wodescription="ngModel">
-          
+
             <div [hidden]="!wodescription.pristine" class="alert alert-danger">Description is required</div>
         </div>
-        
-        
-        <button type="submit" [disabled]="!woForm.form.valid" 
+
+        <div class="form-group">
+          <label for="assetNumber">Asset Number</label>
+          <input type="text" [(ngModel)]="workorder.assetNumber"
+            class="form-control"
+            id="assetNumber"
+            name="assetNumber"
+            placeholder="Enter the Asset Number"
+            required #assetNumber="ngModel">
+
+            <div [hidden]="!assetNumber.pristine" class="alert alert-danger">Asset Number is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="wodueDate">Due Date</label>
+          <input type="text" [(ngModel)]="workorder.wodueDate"
+            class="form-control"
+            id="wodueDate"
+            name="wodueDate"
+            placeholder="Enter the Due Date"
+            required #wodueDate="ngModel">
+
+            <div [hidden]="!wodueDate.pristine" class="alert alert-danger">Due Date is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="wocreationDate">Creation Date</label>
+          <input type="text" [(ngModel)]="workorder.wocreationDate"
+            class="form-control"
+            id="wocreationDate"
+            name="wocreationDate"
+            placeholder="Enter the Creation Date"
+            required #wocreationDate="ngModel">
+
+            <div [hidden]="!wocreationDate.pristine" class="alert alert-danger">Creation Date is required</div>
+        </div>
+
+
+        <button type="submit" [disabled]="!woForm.form.valid"
           class="btn btn-info">Submit</button>
       </form>
     </div>

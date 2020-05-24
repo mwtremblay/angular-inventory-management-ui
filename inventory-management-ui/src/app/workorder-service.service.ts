@@ -13,9 +13,7 @@ export class WorkOrderService {
   }
 
   public findAll(): Observable<WorkOrder[]> {
-
     return this.http.get<WorkOrder[]>(this.woURL);
-
 }
 
   public save(workorder: WorkOrder) {
@@ -25,5 +23,13 @@ export class WorkOrderService {
   public delete(id: number): Observable<any> {
     return this.http.delete(`${this.woURL}/${id}`, { responseType: 'text' });
 
+  }
+
+  public update(id: number, value: any): Observable<any>{
+    return this.http.put(`${this.woURL}/${id}`, value);
+  }
+
+  public getWO(id: number): Observable<any>{
+    return this.http.get(`${this.woURL}/${id}`);
   }
 }

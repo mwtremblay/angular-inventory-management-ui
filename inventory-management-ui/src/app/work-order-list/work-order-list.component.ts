@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkOrder } from '../work-order';
 import { WorkOrderService } from '../workorder-service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -38,6 +39,13 @@ export class WorkOrderListComponent implements OnInit {
       }
 
     );
+  }
+
+  editWorkOrder(id: number){
+
+
+    this.workOrderService.getWO(id);
+    console.log(id);
   }
 
 

@@ -1,5 +1,6 @@
 <div class="card my-5">
     <div class="card-body">
+      <a routerLink="/addWorkOrders" class="btn btn-info">Add Work Order</a>
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
@@ -18,7 +19,12 @@
             <td> {{ workorder.wodueDate }} </td>
             <td> {{ workorder.wocreationDate }} </td>
             <td> {{ workorder.assetNumber }} </td>
-            <td><button (click)="deleteWorkOrder(workorder.id)" class="btn btn-danger">Delete</button></td>
+            <td>
+
+              <a [routerLink]="['/editWorkOrder', workorder.id]" class="btn btn-info">Edit</a>
+              &nbsp;
+              <button (click)="deleteWorkOrder(workorder.id)" class="btn btn-danger">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>

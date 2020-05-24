@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { WorkOrderListComponent } from './work-order-list/work-order-list.component';
 import { WorkOrderFormComponent } from './work-order-form/work-order-form.component';
 import { WorkOrderService } from './workorder-service.service';
+import { WorkOrderEditComponent } from './work-order-edit/work-order-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkOrderListComponent,
-    WorkOrderFormComponent
+    WorkOrderFormComponent,
+    WorkOrderEditComponent
   ],
   imports: [
     BrowserModule,

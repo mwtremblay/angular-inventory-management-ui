@@ -1,0 +1,26 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Asset Number</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let workorder of workorders">
+            <td> {{ workorder.woname }} </td>
+            <td> {{ workorder.wodescription }} </td>
+            <td> {{ workorder.wodueDate }} </td>
+            <td> {{ workorder.wocreationDate }} </td>
+            <td> {{ workorder.assetNumber }} </td>
+            <td><button (click)="deleteWorkOrder(workorder.id)" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

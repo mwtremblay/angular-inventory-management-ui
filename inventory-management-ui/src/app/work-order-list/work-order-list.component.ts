@@ -28,6 +28,7 @@ export class WorkOrderListComponent implements OnInit {
     });
   }
 
+
   deleteWorkOrder(id: number){
     this.workOrderService.delete(id).subscribe(
       data => {

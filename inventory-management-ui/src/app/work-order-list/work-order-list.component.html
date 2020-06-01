@@ -1,32 +1,35 @@
-<div class="card my-5">
-    <div class="card-body">
-      <a routerLink="/addWorkOrders" class="btn btn-info">Add Work Order</a>
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
+<div>
+  <div>
+    <!-- Gotta wrap the button in a link just to get the style to apply-->
+    <a routerLink="/addWorkOrders">
+        <button pButton type="button" class="ui-button-info" label="New"></button>
+      </a>
+      <br/><br/>
+      <p-table  [value]="workorders">
+        <ng-template pTemplate="header">
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Due Date</th>
-            <th scope="col">Creation Date</th>
-            <th scope="col">Asset Number</th>
-            <th scope="col">Actions</th>
+            <th *ngFor="let col of cols">
+              {{ col.header }}
+            </th>
+            <th>Actions</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let workorder of workorders">
-            <td> {{ workorder.woname }} </td>
-            <td> {{ workorder.wodescription }} </td>
-            <td> {{ workorder.wodueDate }} </td>
-            <td> {{ workorder.wocreationDate }} </td>
-            <td> {{ workorder.assetNumber }} </td>
+       	</ng-template>
+        <ng-template pTemplate="body" let-workorder>
+          <tr>
+            <td *ngFor="let col of cols">
+              {{ workorder[col.field] }}
+            </td>
             <td>
-
-              <a [routerLink]="['/editWorkOrder', workorder.id]" class="btn btn-info">Edit</a>
+              <!-- Gotta wrap the button in a link just to get the style to apply-->
+              <a [routerLink]="['/editWorkOrder', workorder.id]">
+                <button pButton type="button" class="ui-button-info" label="Edit">
+                </button>
+              </a>
               &nbsp;
-              <button (click)="deleteWorkOrder(workorder.id)" class="btn btn-danger">Delete</button>
+              <button pButton type="button" class="ui-button-danger" label="Delete" (click)="deleteWorkOrder(workorder.id)"></button>
             </td>
           </tr>
-        </tbody>
-      </table>
+        </ng-template>
+      </p-table>
     </div>
   </div>

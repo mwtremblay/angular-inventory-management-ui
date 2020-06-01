@@ -26,6 +26,9 @@ export class WorkOrderService {
   }
 
   public update(id: number, value: any): Observable<any>{
+    console.log('Update Service Called');
+    console.log('ID received', id);
+    console.log('Value recevied', value);
     return this.http.put(`${this.woURL}/${id}`, value);
   }
 

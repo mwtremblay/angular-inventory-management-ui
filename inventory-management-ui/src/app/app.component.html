@@ -1,33 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a class="btn btn-info">Assets</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn btn-info">Parts</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn btn-info">Vendors</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn btn-info">Preventive Maintenance</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/workOrders" class="btn btn-info">Work Orders</a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn btn-info">Settings</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-      <router-outlet></router-outlet>
-    </div>
+<div>
+  <div class="ui-card-header">
+    <h2>{{ title }}</h2>
+    <p-menubar [model]="mitems"></p-menubar>
+    <br/>
   </div>
 </div>
+<router-outlet></router-outlet>
